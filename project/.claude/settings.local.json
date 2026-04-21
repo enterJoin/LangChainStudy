@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(pip3 --version)",
+      "Bash(pip install *)",
+      "Bash(python \"chapter01-io\\\\1.IOTest.py\")",
+      "Bash(.venv\\\\Scripts\\\\python.exe \"chapter01-io\\\\1.IOTest.py\")",
+      "Bash(.venv/Scripts/python.exe \"chapter01-io/1.IOTest.py\")",
+      "Bash(PYTHONPATH=. .venv/Scripts/python.exe \"chapter01-io/1.IOTest.py\")",
+      "Bash(python \"5.提示词模板ChatPromptTemplate.py\")",
+      "Bash(python *)",
+      "Bash(PYTHONPATH=. python *)",
+      "Bash(curl *)"
+    ]
+  }
+}
