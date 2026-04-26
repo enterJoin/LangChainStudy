@@ -23,13 +23,14 @@ chatPrompt1 = ChatPromptTemplate.from_messages([
 chain1 = LLMChain(llm=llm, prompt=chatPrompt1, verbose=True)
 response = chain1.invoke(input={"keyword", "什么是langchain"})
 print(response)
+# 后续提示词只能有一个变量  并且这个变量就是前一个AIMessage的回答
 chatPrompt2 = ChatPromptTemplate.from_messages([
     ("system", "你是一个总结高手"),
     ("human", "这是一个经过提问的回答: {answer}"),
-    ("human", "请用50字以内总结该文本")
+    ("human", "请用{num}字以内总结该文本")
 ])
 chain2 = LLMChain(llm=llm, prompt=chatPrompt2, verbose=True)
 simpleSequentialChain = SimpleSequentialChain(chains=[chain1, chain2], verbose=True)
-print(simpleSequentialChain.invoke(input={"keyword", "什么是langchain"}))
+print(simpleSequentialChain.invoke(input={"keyword": "什么是langchain", "num": 50}))
 
 #多次输入 多次输出（调用大模型次数不同）
