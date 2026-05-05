@@ -11,7 +11,12 @@
       "Bash(python \"5.提示词模板ChatPromptTemplate.py\")",
       "Bash(python *)",
       "Bash(PYTHONPATH=. python *)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(pip list *)",
+      "Bash(pip show *)",
+      "Bash(.venv/Scripts/pip install *)",
+      "Bash(.venv/Scripts/python *)",
+      "Bash(.venv/Scripts/python.exe *)"
     ]
   }
 }
