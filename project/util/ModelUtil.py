@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
-from zai import ZhipuAiClient
+# from zai import ZhipuAiClient
 import time
 
 _env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'llm.env')
@@ -29,16 +29,16 @@ async def sync_test(chatModelAI, message):
     return response
 
 
-def invoke(message):
-    # 初始化客户端
-    client = ZhipuAiClient(api_key=get_config('API_KEY'))
-
-    # 创建聊天完成请求
-    return client.chat.completions.create(
-        model=get_config('model'),
-        messages=message,
-        temperature=0.6
-    )
+# def invoke(message):
+#     # 初始化客户端
+#     client = ZhipuAiClient(api_key=get_config('API_KEY'))
+#
+#     # 创建聊天完成请求
+#     return client.chat.completions.create(
+#         model=get_config('model'),
+#         messages=message,
+#         temperature=0.6
+#     )
 
 
 def get_llm():
